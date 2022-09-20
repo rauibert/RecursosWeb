@@ -1,0 +1,46 @@
+
+body{
+    background: #232323;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+}
+
+body h2{
+    color: #0460b6;    
+}
+
+.loader{
+    display: inline-block;
+    width: 250px;
+    height: 20px;
+    border-radius: 40px;
+    background-color: rgba(255,255,255, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.loader::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(332deg, #2e34f3,#b322f7);
+    border-radius: inherit;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: scale 1.5s infinite;
+}
+
+@keyframes scale{
+    50%{
+        transform: scaleX(1);
+    }
+    100%{
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+}
